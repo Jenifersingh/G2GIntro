@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Charm&family=Charmonman&family=Niconne&family=Sacramento&family=Stalemate&family=Tourney&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Cabin Sketch', cursive;
+font-family: 'Charm', cursive;
+font-family: 'Charmonman', cursive;
+font-family: 'Niconne', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Stalemate', cursive;
+font-family: 'Tourney', cursive; -->
+
+    <title>G2G Intro</title>
+
+    <style>
+        body {
+            height: 97vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 96%;
+            height: 96%;
+            background-color: #FFFB97;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .arrowTopLeft, .arrowTopRight, .arrowBottomLeft, .arrowBottomRight {
+            width: fit-content;
+            position: absolute;
+            margin: 20px;
+        }
+
+        .arrowTopLeft {
+            top: 0;
+        }
+
+        .arrowTopRight {
+            top: 0;
+            right: 0;
+        }
+
+        .arrowBottomLeft {
+            bottom: 0;
+        }
+
+        .arrowBottomRight {
+            bottom: 0;
+            right: 0;
+        }
+
+        .arrowTopLeftAnimation {
+            animation: arrowTopLeft 1.5s ease-in-out;
+        }
+
+        .arrowTopRightAnimation {
+            animation: arrowTopRight 1.5s ease-in-out;
+        }
+
+        .arrowBottomLeftAnimation {
+            animation: arrowBottomLeft 1.5s ease-in-out;
+        }
+
+        .arrowBottomRightAnimation {
+            animation: arrowBottomRight 1.5s ease-in-out;
+        }
+
+        @keyframes arrowTopLeft {
+            from {
+                top: 0;
+                left: 0;
+            }
+            40% {
+                top: 37%;
+                left: 42%;
+            }
+            60% {
+                top: 37%;
+                left: 42%;
+            }
+            100% {
+                top: 0;
+                left: 0;
+            }
+        }
+
+        @keyframes arrowTopRight {
+            from {
+                top: 0;
+                right: 0;
+            }
+            40% {
+                top: 37%;
+                right: 42%;
+            }
+            60% {
+                top: 37%;
+                right: 42%;
+            }
+            100% {
+                top: 0;
+                right: 0;
+            }
+        }
+
+        @keyframes arrowBottomLeft {
+            from {
+                bottom: 0;
+                left: 0;
+            }
+            40% {
+                bottom: 37%;
+                left: 42%;
+            }
+            60% {
+                bottom: 37%;
+                left: 42%;
+            }
+            100% {
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        @keyframes arrowBottomRight {
+            from {
+                bottom: 0;
+                right: 0;
+            }
+            40% {
+                bottom: 37%;
+                right: 42%;
+            }
+            60% {
+                bottom: 37%;
+                right: 42%;
+            }
+            100% {
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        .content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            min-width: auto;
+            min-height: auto;
+        }
+
+        .active-1 {
+            animation: contentOne .75s ease-in-out;
+        }
+
+        @keyframes contentOne {
+            from {
+                opacity: 1;
+                min-width: auto;
+                min-height: auto;
+            }
+            90% {
+                opacity: 0;
+                min-width: 0;
+                min-height: 0;
+            }
+            100% {
+                opacity: 0;
+                min-width: 0;
+                min-height: 0;
+            }
+            
+        }
+
+        .active-2 {
+            animation: contentTwo .75s ease-in-out;
+        }
+
+        @keyframes contentTwo {
+            0% {
+                opacity: 0;
+                min-width: 0;
+                min-height: 0;
+            }
+            10% {
+                opacity: 0;
+                min-width: 0;
+                min-height: 0;
+            }
+            100% {
+                opacity: 1;
+                min-width: auto;
+                min-height: auto;
+            }
+            
+        }
+
+        .first, .second {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .contentActive {
+            opacity: 0;
+            display: none;
+        }
+
+        .name, .thankName {
+            font-family: 'Sacramento', cursive;
+            font-size: 64px;
+            margin-bottom: 100px;
+        }
+
+        .role, .thanks {
+            font-family: 'Tourney', cursive;
+            font-size: 48px;
+            margin-bottom: 100px;
+        }
+
+        .second, .third, .forth, .fifth, .sixth, .seventh {
+            font-family: 'Niconne', cursive;
+            font-size: 50px;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .end {
+            font-family: 'Sacramento', cursive;
+            font-size: 90px;
+        }
+
+        .heading {
+            font-family: 'Tourney', cursive;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="arrowTopLeft">
+            <svg width="79" height="101" viewBox="0 0 79 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M55.3139 1.94624L77.5164 99.525L1.89152 45.286L41.6885 47.6561L42.0693 47.6788L42.1841 47.2823L55.3139 1.94624Z" stroke="black"/>
+            </svg>
+        </div>
+
+        <div class="arrowTopRight">
+            <svg width="88" height="94" viewBox="0 0 88 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M86.0651 53.2174L1.0599 92.5857L38.2532 2.69269L42.4288 45.8496L42.4678 46.2525L42.8362 46.3114L86.0651 53.2174Z" stroke="black"/>
+            </svg>                
+        </div>
+
+        <div class="arrowBottomLeft">
+            <svg width="85" height="97" viewBox="0 0 85 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.03919 48.5771L83.6997 1.5853L53.5755 94.5492L46.0875 51.9378L46.0165 51.5337L45.6388 51.5083L2.03919 48.5771Z" stroke="black"/>
+            </svg>                
+        </div>
+
+        <div class="arrowBottomRight">
+            <svg width="88" height="94" viewBox="0 0 88 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M41.4742 91.8309L1.75681 1.04809L85.8521 37.7151L46.3995 44.0709L46.0359 44.1295L45.9978 44.5272L41.4742 91.8309Z" stroke="black"/>
+            </svg>    
+        </div>
+
+        <div class="content">
+
+            <div class="slide-1">
+                <div class="first">    
+                    <div class="name">Y S Jenifer Singh</div>
+                    <div class="role">Front End Developer &nbsp;&nbsp; - &nbsp;&nbsp;  Project Product Team</div>
+                </div>
+            </div>
+            
+
+            <div class="slide-2 contentActive">
+                <div class="second">    
+                    <div class="thanks">Thanks To</div>
+                    <div class="thankName">Caroline Amirtha</div>
+                </div>
+            </div>
+            
+            <div class="slide-3 contentActive">
+                <div class="third">    
+                    <ul>
+                        <li>-&nbsp;&nbsp; Native - Kanyakumari</li>
+                        <li>-&nbsp;&nbsp; Engineering in Coimbatore</li>
+                        <li>-&nbsp;&nbsp; Previously worked in Cognizant</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide-4 contentActive">
+                <div class="forth">    
+                    <div class="heading">Things I love</div>
+                    <ul>
+                        <li>-&nbsp;&nbsp; My family - strength of me</li>
+                        <li>-&nbsp;&nbsp; Fish - I can go to hell if I got fish there</li>
+                        <li>-&nbsp;&nbsp; Love to write Code</li>
+                        <li>-&nbsp;&nbsp; Books - Not a frequent reader, yet read books of Chetan Bhagat, Davinci Code </li>
+                        <li>-&nbsp;&nbsp; Love to watch any movie, web series even tamil serials</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide-5 contentActive">
+                <div class="fifth">    
+                    <div class="heading">Things Learnt from Life</div>
+                    <ul>
+                        <li>-&nbsp;&nbsp; Have Patience, life will show you lot of things</li>
+                        <li>-&nbsp;&nbsp; Practice and hardwork was the way to get experience</li>
+                        <li>-&nbsp;&nbsp; Take everything easy, even pain can show you happiness</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide-6 contentActive">
+                <div class="sixth">   
+                    <div class="heading">Things Crazy about Me</div> 
+                    <ul>
+                        <li>-&nbsp;&nbsp; Used to get into crazy fights with my loved ones</li>
+                        <li>-&nbsp;&nbsp; Used to Say lot of Mokka Jokes</li>
+                        <li>-&nbsp;&nbsp; Tries to wake early everyday, but fails 29 days in a month.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="slide-7 contentActive">
+                <div class="seventh">    
+                    <div class="end">Thanks</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        var currentSlide = 1;
+        var currentKey = 40;
+        var animationStart = false;
+
+        var MAX_LENGTH = document.querySelectorAll(".content > div").length
+
+        console.log(currentSlide, MAX_LENGTH)
+
+        var arrowTopLeft = document.querySelector(".arrowTopLeft")
+        var arrowTopRight = document.querySelector(".arrowTopRight")
+        var arrowBottomLeft = document.querySelector(".arrowBottomLeft")
+        var arrowBottomRight = document.querySelector(".arrowBottomRight")
+        var content = document.querySelector(".content")
+
+        document.addEventListener("keydown", function(e) {
+
+            console.log(currentSlide, MAX_LENGTH)
+
+            if(e.keyCode === 40 || e.keyCode === 38) {
+
+                if(animationStart) {
+                    return
+                }
+
+                if((currentSlide === MAX_LENGTH && e.keyCode === 40) || (currentSlide === 1 && e.keyCode === 38)) {
+                    return;
+                }
+
+                animationStart = true
+
+                arrowTopLeft.classList.add("arrowTopLeftAnimation")
+                arrowTopRight.classList.add("arrowTopRightAnimation")
+                arrowBottomLeft.classList.add("arrowBottomLeftAnimation")
+                arrowBottomRight.classList.add("arrowBottomRightAnimation")
+
+                content.classList.add("active-1")
+                
+
+            }
+
+            currentKey = e.keyCode
+
+            if(e.keyCode === 40) {
+
+                console.log(currentSlide, MAX_LENGTH)
+
+                if(currentSlide === MAX_LENGTH) {
+                    return;
+                }
+
+                currentSlide++;
+            }
+            if(e.keyCode === 38) {
+
+                if(currentSlide === 1) {
+                    return;
+                }
+
+                currentSlide--;
+            }
+        })
+
+        content.addEventListener("animationend", function() {
+
+            if(currentKey === 40) {
+
+                console.log(currentSlide, MAX_LENGTH)
+
+                if(content.classList.contains("active-1")) {
+                    content.classList.remove("active-1")
+                    document.querySelector(`.slide-${currentSlide-1}`).classList.add("contentActive")
+                    content.classList.add("active-2")
+                    document.querySelector(`.slide-${currentSlide}`).classList.remove("contentActive")
+                }
+                else {
+                    content.classList.remove("active-2")
+                }
+            }
+            else if(currentKey === 38) {
+
+
+                if(content.classList.contains("active-1")) {
+                    content.classList.remove("active-1")
+                    document.querySelector(`.slide-${currentSlide+1}`).classList.add("contentActive")
+                    content.classList.add("active-2")
+                    document.querySelector(`.slide-${currentSlide}`).classList.remove("contentActive")
+                }
+                else {
+                    content.classList.remove("active-2")
+                }
+            }
+            
+        })
+
+        arrowTopLeft.addEventListener("animationend", function() {
+            animationStart = false;
+            arrowTopLeft.classList.remove("arrowTopLeftAnimation")
+        })
+        arrowTopRight.addEventListener("animationend", function() {
+            animationStart = false;
+            arrowTopRight.classList.remove("arrowTopRightAnimation")
+        })
+        arrowBottomLeft.addEventListener("animationend", function() {
+            animationStart = false;
+            arrowBottomLeft.classList.remove("arrowBottomLeftAnimation")
+        })
+        arrowBottomRight.addEventListener("animationend", function() {
+            animationStart = false;
+            arrowBottomRight.classList.remove("arrowBottomRightAnimation")
+        })
+
+        
+
+    </script>
+
+
+    </script>
+</body>
+</html>
